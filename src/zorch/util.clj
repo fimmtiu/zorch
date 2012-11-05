@@ -20,6 +20,12 @@
   "Returns the index of the first occurrence of 'elt' in 'coll'."
   (first (index-filter #(= % elt) coll)))
 
+(defn seq->int [lst]
+  "ORs a sequence of bytes into an integer."
+  (reduce bit-or
+   (for [i (range (count lst))]
+     (bit-shift-left (nth lst i) (* i 8)))))
+
 (defmacro defrecord-singleton [name class fields]
   "Generates a singleton record with a bunch of simple accessors."
   `(do (defrecord ~class ~fields)

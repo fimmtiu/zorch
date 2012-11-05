@@ -19,3 +19,8 @@
 (deftest test-index-of
   (is (= (index-of \e (seq "monkey")) 4))
   (is (nil? (index-of \q (seq "monkey")))))
+
+(deftest test-seq->int
+  (is (= (seq->int '(1 3 7 15)) 252117761))
+  (is (= (seq->int [1 3 7 15]) 252117761))
+  (is (= (seq->int '(1 3 7 15 31)) 133396103937)))
