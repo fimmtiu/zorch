@@ -37,3 +37,8 @@ games. It's still in development, and not in a usable state yet.
 * Support for version 1 and 2 game files
 * Graphics support (Zork Zero, Journey, etc.)
 
+#### Things that would be handy for debugging
+
+* GUI inspector for the object tree
+* Disassembler for routines
+

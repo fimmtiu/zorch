@@ -1,5 +1,5 @@
 (ns zorch.test.objects
-  (:use [zorch objects])
+  (:use [zorch objects story core])
   (:use [clojure.test]))
 
 (deftest attributes
@@ -28,5 +28,41 @@
     (is (not (has-attr? (clear-attr (make-attributes '(1)) 7) 7)))
     (is (not (has-attr? (clear-attr (make-attributes '(0)) 7) 7)))
     (is (not (has-attr? (clear-attr (make-attributes '(0)) 2) 7)))
-    (is (not (has-attr? (clear-attr (make-attributes '(0)) 26) 26)))     ; out of range
+    (is (not (has-attr? (clear-attr (make-attributes '(0)) 26) 26)))   ; out of range
     (is (not (has-attr? (clear-attr (make-attributes '(1 2 3 4 5 6)) 26) 26)))))
+
+(deftest properties-zork1
+  (testing "load-property"
+    (is (= ))
+)
+
+;; (deftest objects-zork1
+;;   (testing "load-object"
+;;     (load-objects-and-properties)
+;;     (is (= object-tree nil))
+;; ;    (is (= (load-object 2 (+ 9 (story-objects-offset))) 0))
+
+;;     )
+
+;;   (testing "obj-has-attr?"
+;;     (is (obj-has-attr? (object-tree 1) 1))
+;;     (is (not (obj-has-attr? (object-tree 1) 2))))
+
+;;   (testing "obj-set-attr"
+;;     (is (not (obj-has-attr? (object-tree 1) 2)))
+;;     (obj-set-attr (object-tree 1) 2)
+;;     (is (obj-has-attr? (object-tree 1) 2)))
+
+;;   (testing "obj-clear-attr"
+;;     (is (obj-has-attr? (object-tree 1) 1))
+;;     (obj-clear-attr (object-tree 1) 1)
+;;     (is (not (obj-has-attr? (object-tree 1) 1))))
+
+;;   (testing "obj-prop"
+;;     ())
+
+;; )
+
+(defn test-ns-hook []
+  (load-story "data/zork1.z3")
+  (properties-zork1))

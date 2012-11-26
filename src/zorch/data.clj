@@ -17,7 +17,6 @@
   (bit-and (bit-or (bit-shift-left high 8) low) 0xFFFF))
 
 (defn load-words [addr len]
-  ;;(prn "addr" addr "blort" (partition 2 (load-bytes addr (* 2 len))))
   (map #(apply construct-word %) (partition 2 (load-bytes addr (* 2 len)))))
 
 (defn load-byte [addr] (first (load-bytes addr 1)))
