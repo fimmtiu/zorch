@@ -151,7 +151,6 @@
         (reset! object-tree (persistent! temptree))
         (do
           (conj! temptree (load-object id offset))
-          (println (last temptree))
           (recur (inc id)
                  (+ offset (object-len))
                  (min (obj-prop-addr (last temptree)) lowest-addr)))))))

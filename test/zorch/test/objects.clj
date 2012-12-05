@@ -33,7 +33,12 @@
 
 (deftest properties-zork1
   (testing "load-property"
-    (is (= ))
+    (let [prop (load-property 0)]
+      (is (= (:num prop) 0))
+      (is (= (:datalen prop) 0))
+      (is (= (:addr prop) 0))
+      (is (= (:size prop) 0))))
+
 )
 
 ;; (deftest objects-zork1
